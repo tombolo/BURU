@@ -48,6 +48,33 @@
         justify-content: center;
         gap: 0.6rem;
         padding: 0.4rem 0;
+
+        // Enhance the social icons inside the mobile drawer stack
+        .header__socials {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0.4rem 0.2rem;
+
+            a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                background: var(--overlay-outside-dialog);
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+                transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+
+                &:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+                    background: var(--general-hover);
+                }
+            }
+        }
     }
     &__menu-mobile-whatsapp {
         flex-shrink: 0;

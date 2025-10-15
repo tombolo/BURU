@@ -1,0 +1,134 @@
+@import '../../styles/mixins.scss';
+
+.db-news {
+  position: relative;
+  background: linear-gradient(180deg, var(--general-section-1), transparent 240%);
+  border: 1px solid var(--general-section-1);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-top: 1.2rem;
+  overflow: hidden;
+
+  @include mobile-or-tablet-screen {
+    padding: 1rem 1rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  &__pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--status-warning);
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.5);
+    animation: pulse 2s infinite;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-prominent);
+  }
+
+  &__hint {
+    margin-left: auto;
+    font-size: 1.1rem;
+    color: var(--text-less-prominent);
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    background: var(--general-main-1);
+    border: 1px solid var(--general-section-1);
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    animation: slideFade 420ms ease both;
+
+    @include mobile-or-tablet-screen {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      text-align: left;
+    }
+  }
+
+  &__badge {
+    background: var(--core-color-opacity-blue-100);
+    color: var(--brand-blue);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  &__headline {
+    margin: 0 0 0.2rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-prominent);
+  }
+
+  &__summary {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-general);
+  }
+
+  &__meta {
+    color: var(--text-less-prominent);
+    font-size: 1.1rem;
+  }
+
+  &__dots {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+    justify-content: center;
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background: var(--general-section-2);
+    transition: all 200ms ease;
+    border: none;
+    padding: 0;
+
+    &--active {
+      width: 18px;
+      background: var(--brand-blue);
+      box-shadow: 0 4px 10px rgba(76, 143, 255, 0.35);
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 193, 7, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.995);
+    filter: saturate(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: saturate(1);
+  }
+}

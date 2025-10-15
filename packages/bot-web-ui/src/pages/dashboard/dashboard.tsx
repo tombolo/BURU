@@ -8,6 +8,7 @@ import OnboardTourHandler from '../tutorials/dbot-tours/onboarding-tour';
 import Cards from './cards';
 import InfoPanel from './info-panel';
 import Announcements from './announcements/announcements';
+import NewsPanel from './news-panel';
 
 type TMobileIconGuide = {
     handleTabChange: (active_number: number) => void;
@@ -61,6 +62,7 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                             </Text>
                         </div>
                         <Cards has_dashboard_strategies={has_dashboard_strategies} is_mobile={!is_desktop} />
+                        <NewsPanel />
                     </div>
                 </div>
             </div>

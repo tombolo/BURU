@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { getDecimalPlaces, platforms, routes } from '@deriv/shared';
+import { Icon } from '@deriv/components';
 import { observer, useStore } from '@deriv/stores';
 import { useDevice } from '@deriv-com/ui';
 
@@ -112,6 +113,18 @@ const DTraderHeader = observer(() => {
                                 setTogglePlatformType={setTogglePlatformType}
                                 current_language={current_language}
                             />
+                            {/* Social icons cluster */}
+                            <div className='header__socials'>
+                                <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+                                    <Icon icon='IcFacebook' width={20} height={20} />
+                                </a>
+                                <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                    <Icon icon='IcWhatsappFilled' width={20} height={20} />
+                                </a>
+                                <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                    <Icon icon='IcTelegram' width={20} height={20} />
+                                </a>
+                            </div>
                         </React.Fragment>
                     )}
                     <MenuLinks />

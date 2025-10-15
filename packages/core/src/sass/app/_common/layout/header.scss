@@ -556,11 +556,7 @@
 // FINEST TRADERS styling for navigation menu
 .dc-menu-link {
     padding: 0.4rem 0.8rem !important;
-    transition: all 0.3s ease !important;
-    
-    &:hover {
-        transform: translateY(-1px) !important;
-    }
+    transition: all 0.2s ease !important;
     
     &__text {
         font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkduster', cursive !important;
@@ -568,47 +564,30 @@
         font-weight: 900 !important;
         font-style: normal !important;
         color: #0000FF !important;
-        letter-spacing: 1.5px !important;
+        letter-spacing: 1.2px !important;
         text-transform: uppercase !important;
-        text-shadow: 
-            2px 2px 0px #87CEEB,
-            4px 4px 0px #4169E1,
-            6px 6px 0px #000080,
-            8px 8px 0px #191970 !important;
-        filter: drop-shadow(0 0 8px rgba(0, 0, 255, 0.6)) !important;
-        position: relative !important;
-        z-index: 1 !important;
-        transform: perspective(500px) rotateX(10deg) !important;
-        animation: retroBounce 3s ease-in-out infinite !important;
-        
-        // Retro bubbly effect
-        &::before {
-            content: attr(data-text) !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            color: #87CEEB !important;
-            z-index: -1 !important;
-            transform: translate(2px, 2px) !important;
-        }
-        
-        &::after {
-            content: attr(data-text) !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            color: #4169E1 !important;
-            z-index: -2 !important;
-            transform: translate(4px, 4px) !important;
-        }
+        text-shadow: 0 2px 0 #87CEEB, 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+        padding: 0.2rem 0.4rem !important;
     }
 }
 
-@keyframes retroBounce {
-    0%, 100% {
-        transform: perspective(500px) rotateX(10deg) scale(1);
-    }
-    50% {
-        transform: perspective(500px) rotateX(10deg) scale(1.05);
+// Social icons next to platform switcher (desktop)
+.header__socials {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-left: 0.6rem;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.12);
+        transition: background 0.2s ease, transform 0.2s ease;
+
+        &:hover { background: rgba(0, 0, 0, 0.2); transform: translateY(-1px); }
     }
 }

@@ -361,6 +361,18 @@ const ToggleMenuDrawer = observer(({ platform_config }) => {
                                         current_language={current_language}
                                         setTogglePlatformType={setTogglePlatformType}
                                     />
+                                    {/* Social icons (mobile) */}
+                                    <div className='header__socials' style={{ padding: '0.6rem 0' }}>
+                                        <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+                                            <Icon icon='IcFacebook' width={20} height={20} />
+                                        </a>
+                                        <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                            <Icon icon='IcWhatsappFilled' width={20} height={20} />
+                                        </a>
+                                        <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                            <Icon icon='IcTelegram' width={20} height={20} />
+                                        </a>
+                                    </div>
                                 </MobileDrawer.SubHeader>
                             )}
 

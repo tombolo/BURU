@@ -7,13 +7,18 @@
   border-radius: 12px;
   padding: 1.2rem 1.4rem;
   margin-top: 1.2rem;
-  margin-bottom: 0;
+  margin-bottom: 30vh;
+  max-width: 720px;
+  margin-inline: auto;
   overflow: hidden;
 
   @include mobile-or-tablet-screen {
     padding: 1rem 1rem;
+    margin-inline: auto;
+    // Modest lift to bring panel closer to mid screen under cards
+    margin-top: 6vh;
     // Leave breathing room above the bottom run panel on mobile
-    margin-bottom: 20vh;
+    margin-bottom: 30vh;
   }
 
   &__header {

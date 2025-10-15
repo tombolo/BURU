@@ -14,6 +14,7 @@ import HeaderAccountActions from './header-account-actions';
 import { useDevice } from '@deriv-com/ui';
 import DerivShortLogo from './deriv-short-logo';
 import TradersHubHomeButton from './traders-hub-home-button';
+import { Icon } from '@deriv/components';
 
 const DefaultHeader = observer(() => {
     const { client, common, notifications, traders_hub, ui } = useStore();
@@ -83,23 +84,60 @@ const DefaultHeader = observer(() => {
                     {!isDesktop ? (
                         <React.Fragment>
                             <ToggleMenuDrawer platform_config={filterPlatformsForClients(platform_config)} />
+                            <div className='header__left-stack'>
+                                {!should_hide_platform_switcher && (
+                                    <PlatformSwitcher
+                                        app_routing_history={app_routing_history}
+                                        is_landing_company_loaded={is_landing_company_loaded}
+                                        is_logged_in={is_logged_in}
+                                        is_logging_in={is_logging_in}
+                                        platform_config={filterPlatformsForClients(platform_config)}
+                                        setTogglePlatformType={setTogglePlatformType}
+                                        current_language={current_language}
+                                    />
+                                )}
+                                <div className='header__socials'>
+                                    <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+                                        <Icon icon='IcFacebook' width={20} height={20} />
+                                    </a>
+                                    <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                        <Icon icon='IcWhatsappFilled' width={20} height={20} />
+                                    </a>
+                                    <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                        <Icon icon='IcTelegram' width={20} height={20} />
+                                    </a>
+                                </div>
+                            </div>
                         </React.Fragment>
                     ) : (
                         <React.Fragment>
                             <DerivShortLogo />
                             <div className='header__divider' />
                             <TradersHubHomeButton />
-                            {!should_hide_platform_switcher && (
-                                <PlatformSwitcher
-                                    app_routing_history={app_routing_history}
-                                    is_landing_company_loaded={is_landing_company_loaded}
-                                    is_logged_in={is_logged_in}
-                                    is_logging_in={is_logging_in}
-                                    platform_config={filterPlatformsForClients(platform_config)}
-                                    setTogglePlatformType={setTogglePlatformType}
-                                    current_language={current_language}
-                                />
-                            )}
+                            <div className='header__left-stack'>
+                                <div className='header__socials'>
+                                    <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+                                        <Icon icon='IcFacebook' width={20} height={20} />
+                                    </a>
+                                    <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                        <Icon icon='IcWhatsappFilled' width={20} height={20} />
+                                    </a>
+                                    <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                        <Icon icon='IcTelegram' width={20} height={20} />
+                                    </a>
+                                </div>
+                                {!should_hide_platform_switcher && (
+                                    <PlatformSwitcher
+                                        app_routing_history={app_routing_history}
+                                        is_landing_company_loaded={is_landing_company_loaded}
+                                        is_logged_in={is_logged_in}
+                                        is_logging_in={is_logging_in}
+                                        platform_config={filterPlatformsForClients(platform_config)}
+                                        setTogglePlatformType={setTogglePlatformType}
+                                        current_language={current_language}
+                                    />
+                                )}
+                            </div>
                         </React.Fragment>
                     )}
                     <MenuLinks />

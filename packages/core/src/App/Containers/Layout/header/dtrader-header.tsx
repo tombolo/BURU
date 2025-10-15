@@ -117,6 +117,28 @@ const DTraderHeader = observer(() => {
                                     )}
                                 </>
                             )}
+                            <div className='header__left-stack'>
+                                <PlatformSwitcher
+                                    app_routing_history={app_routing_history}
+                                    platform_config={filterPlatformsForClients(platform_config)}
+                                    setTogglePlatformType={setTogglePlatformType}
+                                    current_language={current_language}
+                                />
+                                <div className='header__socials'>
+                                    <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+                                        <Icon icon='IcFacebook' width={20} height={20} />
+                                    </a>
+                                    <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                        <Icon icon='IcWhatsappFilled' width={20} height={20} />
+                                    </a>
+                                    <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                        <Icon icon='IcTelegram' width={20} height={20} />
+                                    </a>
+                                    <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                        <InstagramIcon />
+                                    </a>
+                                </div>
+                            </div>
                         </React.Fragment>
                     ) : (
                         <React.Fragment>

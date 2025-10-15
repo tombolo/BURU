@@ -31,6 +31,30 @@
         pointer-events: none;
     }
 
+    // Rotating thin border track effect without a container
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -6px; // create room for the orbiting track
+        border-radius: 10px;
+        background: conic-gradient(
+            from 0deg,
+            rgba(96, 165, 250, 0.0) 0deg,
+            rgba(96, 165, 250, 0.0) 260deg,
+            rgba(96, 165, 250, 0.9) 300deg,
+            rgba(59, 130, 246, 0.9) 330deg,
+            rgba(96, 165, 250, 0.0) 360deg
+        );
+        filter: blur(0.3px);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        padding: 6px; // makes the ring thin
+        pointer-events: none;
+        transform: rotate(0deg);
+        animation: orbitTrack 6s linear infinite;
+    }
+
     // Force all children to be visible
     * {
         opacity: 1 !important;
@@ -45,6 +69,7 @@
     &:hover::after {
         transform: scaleX(1);
     }
+    &:hover::before { animation-duration: 3s; }
 
     & svg:first-child,
     p,
@@ -171,6 +196,10 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+@keyframes orbitTrack {
+    to { transform: rotate(360deg); }
 }
 
 @keyframes arrowFloat {

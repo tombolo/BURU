@@ -4,6 +4,20 @@ import classNames from 'classnames';
 
 import { getDecimalPlaces, platforms, routes } from '@deriv/shared';
 import { Icon } from '@deriv/components';
+
+const InstagramIcon: React.FC<{ width?: number; height?: number; className?: string }> = ({ width = 20, height = 20, className = '' }) => (
+    <svg width={width} height={height} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' className={className} aria-hidden='true'>
+        <defs>
+            <linearGradient id='igGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+                <stop offset='0%' stopColor='#60a5fa'/>
+                <stop offset='100%' stopColor='#1d4ed8'/>
+            </linearGradient>
+        </defs>
+        <rect x='3' y='3' width='18' height='18' rx='5' ry='5' fill='none' stroke='url(#igGrad)' strokeWidth='2'/>
+        <circle cx='12' cy='12' r='4.2' fill='none' stroke='url(#igGrad)' strokeWidth='2'/>
+        <circle cx='17.2' cy='6.8' r='1.3' fill='url(#igGrad)'/>
+    </svg>
+);
 import { observer, useStore } from '@deriv/stores';
 import { useDevice } from '@deriv-com/ui';
 
@@ -124,9 +138,8 @@ const DTraderHeader = observer(() => {
                                 <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                     <Icon icon='IcTelegram' width={20} height={20} />
                                 </a>
-                                {/* Instagram not in icon set; fallback to stock/facebook style if available */}
                                 <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
-                                    <Icon icon='IcStockFacebook' width={20} height={20} />
+                                    <InstagramIcon />
                                 </a>
                             </div>
                         </React.Fragment>

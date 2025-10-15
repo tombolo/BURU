@@ -350,43 +350,45 @@ const ToggleMenuDrawer = observer(({ platform_config }) => {
                                         'dc-mobile-drawer__subheader--hidden': is_submenu_expanded,
                                     })}
                                 >
-                                    <PlatformSwitcher
-                                        app_routing_history={app_routing_history}
-                                        is_mobile
-                                        is_landing_company_loaded={is_landing_company_loaded}
-                                        is_logged_in={is_logged_in}
-                                        is_logging_in={is_logging_in}
-                                        platform_config={platform_config}
-                                        toggleDrawer={toggleDrawer}
-                                        current_language={current_language}
-                                        setTogglePlatformType={setTogglePlatformType}
-                                    />
-                                    {/* Social icons (mobile) */}
-                                    <div className='header__socials' style={{ padding: '0.6rem 0', display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-                                        <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
-                                            <Icon icon='IcFacebook' width={22} height={22} />
-                                        </a>
-                                        <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
-                                            <Icon icon='IcWhatsappFilled' width={22} height={22} />
-                                        </a>
-                                        <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
-                                            <Icon icon='IcTelegram' width={22} height={22} />
-                                        </a>
-                                        <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
-                                            <svg width='22' height='22' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
-                                                <defs>
-                                                    <linearGradient id='igGradMobile' x1='0%' y1='0%' x2='100%' y2='100%'>
-                                                        <stop offset='0%' stopColor='#F58529'/>
-                                                        <stop offset='30%' stopColor='#DD2A7B'/>
-                                                        <stop offset='60%' stopColor='#8134AF'/>
-                                                        <stop offset='100%' stopColor='#515BD4'/>
-                                                    </linearGradient>
-                                                </defs>
-                                                <rect x='3' y='3' width='18' height='18' rx='5' ry='5' fill='none' stroke='url(#igGradMobile)' strokeWidth='2'/>
-                                                <circle cx='12' cy='12' r='4.2' fill='none' stroke='url(#igGradMobile)' strokeWidth='2'/>
-                                                <circle cx='17.2' cy='6.8' r='1.3' fill='url(#igGradMobile)'/>
-                                            </svg>
-                                        </a>
+                                    <div className='header__menu-mobile-stack'>
+                                        <PlatformSwitcher
+                                            app_routing_history={app_routing_history}
+                                            is_mobile
+                                            is_landing_company_loaded={is_landing_company_loaded}
+                                            is_logged_in={is_logged_in}
+                                            is_logging_in={is_logging_in}
+                                            platform_config={platform_config}
+                                            toggleDrawer={toggleDrawer}
+                                            current_language={current_language}
+                                            setTogglePlatformType={setTogglePlatformType}
+                                        />
+                                        {/* Social icons (mobile) */}
+                                        <div className='header__socials'>
+                                            <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
+                                                <Icon icon='IcFacebook' width={22} height={22} />
+                                            </a>
+                                            <a href='https://wa.me/35699578341' target='_blank' rel='noopener noreferrer' aria-label='WhatsApp'>
+                                                <Icon icon='IcWhatsappFilled' width={22} height={22} />
+                                            </a>
+                                            <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
+                                                <Icon icon='IcTelegram' width={22} height={22} />
+                                            </a>
+                                            <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                                <svg width='22' height='22' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
+                                                    <defs>
+                                                        <linearGradient id='igGradMobile' x1='0%' y1='0%' x2='100%' y2='100%'>
+                                                            <stop offset='0%' stopColor='#F58529'/>
+                                                            <stop offset='30%' stopColor='#DD2A7B'/>
+                                                            <stop offset='60%' stopColor='#8134AF'/>
+                                                            <stop offset='100%' stopColor='#515BD4'/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                    <rect x='3' y='3' width='18' height='18' rx='5' ry='5' fill='none' stroke='url(#igGradMobile)' strokeWidth='2'/>
+                                                    <circle cx='12' cy='12' r='4.2' fill='none' stroke='url(#igGradMobile)' strokeWidth='2'/>
+                                                    <circle cx='17.2' cy='6.8' r='1.3' fill='url(#igGradMobile)'/>
+                                                </svg>
+                                            </a>
+                                        </div>
                                     </div>
                                 </MobileDrawer.SubHeader>
                             )}

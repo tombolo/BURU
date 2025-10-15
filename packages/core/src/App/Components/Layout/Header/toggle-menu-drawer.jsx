@@ -412,21 +412,23 @@ const ToggleMenuDrawer = observer(({ platform_config }) => {
                                 )}
                                 <MobileDrawer.Item
                                     className='header__menu-mobile-theme'
-                                    onClick={e => {
-                                        e.preventDefault();
-                                        toggleTheme(!is_dark_mode);
-                                    }}
                                 >
                                     <div className={classNames('header__menu-mobile-link')}>
                                         <Icon className='header__menu-mobile-link-icon' icon={'IcTheme'} />
                                         <span className='header__menu-mobile-link-text'>
                                             {localize('Dark theme')}
                                         </span>
-                                        <ToggleSwitch
-                                            id='dt_mobile_drawer_theme_toggler'
-                                            handleToggle={() => toggleTheme(!is_dark_mode)}
-                                            is_enabled={is_dark_mode}
-                                        />
+                                        <span
+                                            onClick={e => e.stopPropagation()}
+                                            onKeyDown={e => e.stopPropagation()}
+                                            role='presentation'
+                                        >
+                                            <ToggleSwitch
+                                                id='dt_mobile_drawer_theme_toggler'
+                                                handleToggle={() => toggleTheme(!is_dark_mode)}
+                                                is_enabled={is_dark_mode}
+                                            />
+                                        </span>
                                     </div>
                                 </MobileDrawer.Item>
                                 {HelpCentreRoute()}

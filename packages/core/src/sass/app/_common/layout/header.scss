@@ -30,7 +30,7 @@
 
     // Add extra space under the mobile drawer subheader content so the border below sits lower
     .dc-mobile-drawer__subheader:not(.dc-mobile-drawer__subheader--hidden) {
-        padding-bottom: 1.2rem;
+        padding-bottom: 1.6rem;
     }
 
     // Container to group socials and platform switcher
@@ -53,6 +53,7 @@
         justify-content: center;
         gap: 0.6rem;
         padding: 0.4rem 0;
+        margin-top: 12px;
 
         // Enhance the social icons inside the mobile drawer stack
         .header__socials {

@@ -1,0 +1,154 @@
+.traders-hub-logged-out {
+    max-width: 128rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin: auto;
+    padding: 4rem;
+
+    @include mobile-or-tablet-screen {
+        max-width: 60rem;
+        padding: 2rem;
+        width: 100%;
+    }
+
+    &__eu-user {
+        padding-bottom: 7rem;
+
+        @include mobile-or-tablet-screen {
+            min-height: 650px;
+            padding-bottom: 11rem;
+        }
+    }
+
+    &__mobile {
+        overflow: scroll !important;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+    
+    // Style for FINEST TRADERS text
+    .dc-text {
+        &:has(a) {
+            font-size: 1.3rem;
+            font-weight: 900;
+            font-style: normal;
+            background: linear-gradient(135deg, 
+                #8A2BE2 0%,    /* Blue Violet */
+                #FF69B4 20%,   /* Hot Pink */
+                #9370DB 40%,   /* Medium Purple */
+                #FF69B4 60%,   /* Hot Pink */
+                #8A2BE2 80%,   /* Blue Violet */
+                #FF69B4 100%   /* Hot Pink */
+            );
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2.2px;
+            text-transform: uppercase;
+            animation: shimmerPurpleLoggedOut 5s ease-in-out infinite;
+            filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.6)) 
+                    drop-shadow(0 0 24px rgba(255, 105, 180, 0.4))
+                    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+            position: relative;
+            padding: 0.8rem 1.5rem;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            // Subtle background container
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, 
+                    rgba(138, 43, 226, 0.08) 0%, 
+                    rgba(255, 105, 180, 0.05) 50%, 
+                    rgba(138, 43, 226, 0.08) 100%
+                );
+                border-radius: 16px;
+                z-index: -1;
+                border: 1px solid rgba(138, 43, 226, 0.2);
+            }
+            
+            &:hover {
+                transform: translateY(-2px) scale(1.02);
+                filter: drop-shadow(0 0 16px rgba(138, 43, 226, 0.8)) 
+                        drop-shadow(0 0 32px rgba(255, 105, 180, 0.6))
+                        drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+                
+                &::before {
+                    background: linear-gradient(135deg, 
+                        rgba(138, 43, 226, 0.12) 0%, 
+                        rgba(255, 105, 180, 0.08) 50%, 
+                        rgba(138, 43, 226, 0.12) 100%
+                    );
+                    border-color: rgba(138, 43, 226, 0.3);
+                }
+            }
+            
+            a {
+                background: linear-gradient(135deg, 
+                    #8A2BE2 0%,    /* Blue Violet */
+                    #FF69B4 20%,   /* Hot Pink */
+                    #9370DB 40%,   /* Medium Purple */
+                    #FF69B4 60%,   /* Hot Pink */
+                    #8A2BE2 80%,   /* Blue Violet */
+                    #FF69B4 100%   /* Hot Pink */
+                );
+                background-size: 300% auto;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                text-decoration: none;
+                animation: shimmerPurpleLoggedOut 5s ease-in-out infinite;
+            }
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 3px;
+                background: linear-gradient(90deg, 
+                    transparent, 
+                    #8A2BE2, 
+                    #FF69B4, 
+                    #9370DB, 
+                    #FF69B4, 
+                    #8A2BE2, 
+                    transparent
+                );
+                background-size: 200% auto;
+                animation: underlineFlowPurpleLoggedOut 4s ease-in-out infinite;
+                box-shadow: 0 0 12px rgba(138, 43, 226, 0.7);
+                border-radius: 2px;
+            }
+        }
+    }
+    
+    @keyframes shimmerPurpleLoggedOut {
+        0%, 100% {
+            background-position: 0% center;
+        }
+        50% {
+            background-position: 100% center;
+        }
+    }
+    
+    @keyframes underlineFlowPurpleLoggedOut {
+        0%, 100% {
+            background-position: 0% center;
+        }
+        50% {
+            background-position: 100% center;
+        }
+    }
+}

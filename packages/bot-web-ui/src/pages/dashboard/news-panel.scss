@@ -2,9 +2,9 @@
 
 .db-news {
   position: relative;
-  // Darker, elegant panel surface
-  background: linear-gradient(180deg, rgba(14,14,18,0.9), rgba(14,14,18,0.6) 140%);
-  border: 1px solid var(--general-section-2);
+  // Make main container transparent; style is provided by inner cards
+  background: transparent;
+  border: none;
   border-radius: 12px;
   padding: 1.2rem 1.4rem;
   margin-top: 1.2rem;

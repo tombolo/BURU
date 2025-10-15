@@ -57,11 +57,11 @@ const WithdrawalToaster: React.FC<{ className?: string }>= ({ className }) => {
 
     useInterval(() => {
         trigger();
-    }, 20000);
+    }, 10000);
 
     return (
         <div className={classNames('db-withdrawal-toaster', className, { 'db-withdrawal-toaster--visible': visible })} role="status" aria-live="polite">
-            <div className='db-withdrawal-toaster__card'>
+            <div className='db-withdrawal-toaster__card' aria-hidden>
                 <div className='db-withdrawal-toaster__glow' aria-hidden />
                 <div className='db-withdrawal-toaster__icon' aria-hidden>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -28,6 +28,11 @@
         }
     }
 
+    // Add extra space under the mobile drawer subheader content so the border below sits lower
+    .dc-mobile-drawer__subheader:not(.dc-mobile-drawer__subheader--hidden) {
+        padding-bottom: 1.2rem;
+    }
+
     // Container to group socials and platform switcher
     &__left-stack {
         display: inline-flex;

@@ -410,27 +410,25 @@ const ToggleMenuDrawer = observer(({ platform_config }) => {
                                 {primary_routes_config.map((route_config, idx) =>
                                     getRoutesWithSubMenu(route_config, idx)
                                 )}
-                                {!has_wallet && (
-                                    <MobileDrawer.Item
-                                        className='header__menu-mobile-theme'
-                                        onClick={e => {
-                                            e.preventDefault();
-                                            toggleTheme(!is_dark_mode);
-                                        }}
-                                    >
-                                        <div className={classNames('header__menu-mobile-link')}>
-                                            <Icon className='header__menu-mobile-link-icon' icon={'IcTheme'} />
-                                            <span className='header__menu-mobile-link-text'>
-                                                {localize('Dark theme')}
-                                            </span>
-                                            <ToggleSwitch
-                                                id='dt_mobile_drawer_theme_toggler'
-                                                handleToggle={() => toggleTheme(!is_dark_mode)}
-                                                is_enabled={is_dark_mode}
-                                            />
-                                        </div>
-                                    </MobileDrawer.Item>
-                                )}
+                                <MobileDrawer.Item
+                                    className='header__menu-mobile-theme'
+                                    onClick={e => {
+                                        e.preventDefault();
+                                        toggleTheme(!is_dark_mode);
+                                    }}
+                                >
+                                    <div className={classNames('header__menu-mobile-link')}>
+                                        <Icon className='header__menu-mobile-link-icon' icon={'IcTheme'} />
+                                        <span className='header__menu-mobile-link-text'>
+                                            {localize('Dark theme')}
+                                        </span>
+                                        <ToggleSwitch
+                                            id='dt_mobile_drawer_theme_toggler'
+                                            handleToggle={() => toggleTheme(!is_dark_mode)}
+                                            is_enabled={is_dark_mode}
+                                        />
+                                    </div>
+                                </MobileDrawer.Item>
                                 {HelpCentreRoute()}
                                 {is_logged_in ? (
                                     <React.Fragment>

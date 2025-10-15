@@ -84,14 +84,21 @@ const NewsPanel: React.FC<{
                         style={{ ['--stagger' as any]: `${idx * 70}ms` }}
                         aria-label={`News ${idx + 1}: ${it.title}`}
                     >
-                        <div className='db-news__card'>
-                            <div className='db-news__badge'>{it.tag || 'Market'}</div>
-                            <div className='db-news__content'>
-                                <h4 className='db-news__headline'>{it.title}</h4>
-                                <p className='db-news__summary'>{it.summary}</p>
-                            </div>
-                            <div className='db-news__meta'>{it.time}</div>
-                        </div>
+                        {/** Randomly show a decorative thumbnail ~40% of the time */}
+                        {(() => {
+                            const showThumb = Math.random() < 0.4;
+                            return (
+                                <div className={classNames('db-news__card', { 'db-news__card--with-thumb': showThumb })}>
+                                    {showThumb && <div className='db-news__thumb' aria-hidden />}
+                                    <div className='db-news__badge'>{it.tag || 'Market'}</div>
+                                    <div className='db-news__content'>
+                                        <h4 className='db-news__headline'>{it.title}</h4>
+                                        <p className='db-news__summary'>{it.summary}</p>
+                                    </div>
+                                    <div className='db-news__meta'>{it.time}</div>
+                                </div>
+                            );
+                        })()}
                     </li>
                 ))}
             </ul>

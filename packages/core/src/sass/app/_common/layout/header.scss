@@ -555,76 +555,60 @@
 
 // FINEST TRADERS styling for navigation menu
 .dc-menu-link {
-    padding: 0.8rem 1.2rem !important;
-    border-radius: 12px !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    position: relative !important;
-    overflow: hidden !important;
-    
-    // Subtle background with gradient
-    &::before {
-        content: '' !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        background: linear-gradient(135deg, 
-            rgba(138, 43, 226, 0.1) 0%, 
-            rgba(255, 105, 180, 0.05) 50%, 
-            rgba(138, 43, 226, 0.1) 100%
-        ) !important;
-        border-radius: 12px !important;
-        z-index: -1 !important;
-    }
+    padding: 0.4rem 0.8rem !important;
+    transition: all 0.3s ease !important;
     
     &:hover {
-        background: linear-gradient(135deg, 
-            rgba(138, 43, 226, 0.15) 0%, 
-            rgba(255, 105, 180, 0.1) 50%, 
-            rgba(138, 43, 226, 0.15) 100%
-        ) !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3) !important;
+        transform: translateY(-1px) !important;
     }
     
     &__text {
-        font-size: 1.1rem !important;
-        font-weight: 800 !important;
+        font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkduster', cursive !important;
+        font-size: 1.3rem !important;
+        font-weight: 900 !important;
         font-style: normal !important;
-        background: linear-gradient(135deg, 
-            #8A2BE2 0%,    /* Blue Violet */
-            #FF69B4 25%,   /* Hot Pink */
-            #9370DB 50%,   /* Medium Purple */
-            #FF69B4 75%,   /* Hot Pink */
-            #8A2BE2 100%   /* Blue Violet */
-        ) !important;
-        background-size: 200% auto !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-        letter-spacing: 1.8px !important;
+        color: #0000FF !important;
+        letter-spacing: 1.5px !important;
         text-transform: uppercase !important;
-        animation: shimmerPurpleNav 4s ease-in-out infinite !important;
-        filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.5)) 
-                drop-shadow(0 0 16px rgba(255, 105, 180, 0.3)) 
-                drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)) !important;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+        text-shadow: 
+            2px 2px 0px #87CEEB,
+            4px 4px 0px #4169E1,
+            6px 6px 0px #000080,
+            8px 8px 0px #191970 !important;
+        filter: drop-shadow(0 0 8px rgba(0, 0, 255, 0.6)) !important;
         position: relative !important;
         z-index: 1 !important;
+        transform: perspective(500px) rotateX(10deg) !important;
+        animation: retroBounce 3s ease-in-out infinite !important;
+        
+        // Retro bubbly effect
+        &::before {
+            content: attr(data-text) !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            color: #87CEEB !important;
+            z-index: -1 !important;
+            transform: translate(2px, 2px) !important;
+        }
+        
+        &::after {
+            content: attr(data-text) !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            color: #4169E1 !important;
+            z-index: -2 !important;
+            transform: translate(4px, 4px) !important;
+        }
     }
 }
 
-@keyframes shimmerPurpleNav {
+@keyframes retroBounce {
     0%, 100% {
-        background-position: 0% center;
-        filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.5)) 
-                drop-shadow(0 0 16px rgba(255, 105, 180, 0.3));
+        transform: perspective(500px) rotateX(10deg) scale(1);
     }
     50% {
-        background-position: 200% center;
-        filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.7)) 
-                drop-shadow(0 0 24px rgba(255, 105, 180, 0.5))
-                drop-shadow(0 0 35px rgba(147, 112, 219, 0.3));
+        transform: perspective(500px) rotateX(10deg) scale(1.05);
     }
 }

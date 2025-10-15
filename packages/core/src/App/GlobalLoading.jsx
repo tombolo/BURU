@@ -256,9 +256,9 @@ const GlobalLoading = () => {
                             >
                                 <defs>
                                     <linearGradient id='chartGradient' x1='0%' y1='0%' x2='100%' y2='0%'>
-                                        <stop offset='0%' stopColor='#FF69B4' />
-                                        <stop offset='50%' stopColor='#8A2BE2' />
-                                        <stop offset='100%' stopColor='#00ff47' />
+                                        <stop offset='0%' stopColor='#00BFFF' />
+                                        <stop offset='50%' stopColor='#1E90FF' />
+                                        <stop offset='100%' stopColor='#0066CC' />
                                     </linearGradient>
                                     <filter id='glow' x='-30%' y='-30%' width='160%' height='160%'>
                                         <feGaussianBlur stdDeviation='4' result='blur' />

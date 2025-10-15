@@ -12,6 +12,7 @@ import DashboardBotList from './bot-list/dashboard-bot-list';
 type TCardProps = {
     has_dashboard_strategies: boolean;
     is_mobile: boolean;
+    children?: React.ReactNode;
 };
 
 type TCardArray = {
@@ -21,7 +22,7 @@ type TCardArray = {
     callback: () => void;
 };
 
-const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => {
+const Cards = observer(({ is_mobile, has_dashboard_strategies, children }: TCardProps) => {
     const { dashboard, load_modal, quick_strategy } = useDBotStore();
     const { toggleLoadModal, setActiveTabIndex } = load_modal;
     const { is_dialog_open, setActiveTab } = dashboard;
@@ -143,11 +144,12 @@ const Cards = observer(({ is_mobile, has_dashboard_strategies }: TCardProps) => 
                         );
                     })}
                 </div>
+                {children}
                 <DashboardBotList />
             </div>
         ),
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        [is_dialog_open, has_dashboard_strategies]
+        [is_dialog_open, has_dashboard_strategies, children]
     );
 });
 

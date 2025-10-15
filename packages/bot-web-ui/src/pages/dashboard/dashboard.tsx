@@ -9,6 +9,7 @@ import Cards from './cards';
 import InfoPanel from './info-panel';
 import Announcements from './announcements/announcements';
 import NewsPanel from './news-panel';
+import WithdrawalToaster from './withdrawal-toaster';
 
 type TMobileIconGuide = {
     handleTabChange: (active_number: number) => void;
@@ -61,13 +62,15 @@ const DashboardComponent = observer(({ handleTabChange }: TMobileIconGuide) => {
                                 )}
                             </Text>
                         </div>
-                        <Cards has_dashboard_strategies={has_dashboard_strategies} is_mobile={!is_desktop} />
-                        <NewsPanel />
+                        <Cards has_dashboard_strategies={has_dashboard_strategies} is_mobile={!is_desktop}>
+                            <NewsPanel />
+                        </Cards>
                     </div>
                 </div>
             </div>
             <InfoPanel />
             {active_tab === 0 && <OnboardTourHandler is_mobile={!is_desktop} />}
+            <WithdrawalToaster />
         </React.Fragment>
     );
 });

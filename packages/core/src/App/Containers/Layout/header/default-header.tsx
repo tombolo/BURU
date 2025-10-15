@@ -16,6 +16,22 @@ import DerivShortLogo from './deriv-short-logo';
 import TradersHubHomeButton from './traders-hub-home-button';
 import { Icon } from '@deriv/components';
 
+const InstagramIcon: React.FC<{ width?: number; height?: number; className?: string }> = ({ width = 20, height = 20, className = '' }) => (
+    <svg width={width} height={height} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' className={className} aria-hidden='true'>
+        <defs>
+            <linearGradient id='igGradDefaultHeader' x1='0%' y1='0%' x2='100%' y2='100%'>
+                <stop offset='0%' stopColor='#F58529'/>
+                <stop offset='30%' stopColor='#DD2A7B'/>
+                <stop offset='60%' stopColor='#8134AF'/>
+                <stop offset='100%' stopColor='#515BD4'/>
+            </linearGradient>
+        </defs>
+        <rect x='3' y='3' width='18' height='18' rx='5' ry='5' fill='none' stroke='url(#igGradDefaultHeader)' strokeWidth='2'/>
+        <circle cx='12' cy='12' r='4.2' fill='none' stroke='url(#igGradDefaultHeader)' strokeWidth='2'/>
+        <circle cx='17.2' cy='6.8' r='1.3' fill='url(#igGradDefaultHeader)'/>
+    </svg>
+);
+
 const DefaultHeader = observer(() => {
     const { client, common, notifications, traders_hub, ui } = useStore();
     const {
@@ -106,6 +122,9 @@ const DefaultHeader = observer(() => {
                                     <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                         <Icon icon='IcTelegram' width={20} height={20} />
                                     </a>
+                                    <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                        <InstagramIcon />
+                                    </a>
                                 </div>
                             </div>
                         </React.Fragment>
@@ -124,6 +143,9 @@ const DefaultHeader = observer(() => {
                                     </a>
                                     <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                         <Icon icon='IcTelegram' width={20} height={20} />
+                                    </a>
+                                    <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                        <InstagramIcon />
                                     </a>
                                 </div>
                                 {!should_hide_platform_switcher && (

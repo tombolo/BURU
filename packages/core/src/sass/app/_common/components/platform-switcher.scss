@@ -135,7 +135,7 @@
         background: transparent;
         border-radius: 0;
         padding: 0.4rem 0.6rem;
-        margin: 0 auto;
+        margin: 0.4rem auto 0.2rem;
 
         // Tap ripple without container
         &::before {
@@ -149,6 +149,9 @@
         }
         &:active::before { opacity: 1; }
     }
+
+    // Thin black border to improve visibility on all screens
+    border: 1px solid rgba(0, 0, 0, 0.15);
 
     // Enhanced styling for custom platform icons - always visible
     &__icon {

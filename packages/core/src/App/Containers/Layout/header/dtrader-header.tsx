@@ -9,8 +9,10 @@ const InstagramIcon: React.FC<{ width?: number; height?: number; className?: str
     <svg width={width} height={height} viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' className={className} aria-hidden='true'>
         <defs>
             <linearGradient id='igGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
-                <stop offset='0%' stopColor='#60a5fa'/>
-                <stop offset='100%' stopColor='#1d4ed8'/>
+                <stop offset='0%' stopColor='#F58529'/>
+                <stop offset='30%' stopColor='#DD2A7B'/>
+                <stop offset='60%' stopColor='#8134AF'/>
+                <stop offset='100%' stopColor='#515BD4'/>
             </linearGradient>
         </defs>
         <rect x='3' y='3' width='18' height='18' rx='5' ry='5' fill='none' stroke='url(#igGrad)' strokeWidth='2'/>
@@ -121,13 +123,7 @@ const DTraderHeader = observer(() => {
                             <DerivShortLogo />
                             <div className='header__divider' />
                             <TradersHubHomeButton />
-                            <PlatformSwitcher
-                                app_routing_history={app_routing_history}
-                                platform_config={filterPlatformsForClients(platform_config)}
-                                setTogglePlatformType={setTogglePlatformType}
-                                current_language={current_language}
-                            />
-                            {/* Social icons cluster */}
+                            {/* Social icons cluster (before platform switcher on desktop) */}
                             <div className='header__socials'>
                                 <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' aria-label='Facebook'>
                                     <Icon icon='IcFacebook' width={20} height={20} />
@@ -142,6 +138,12 @@ const DTraderHeader = observer(() => {
                                     <InstagramIcon />
                                 </a>
                             </div>
+                            <PlatformSwitcher
+                                app_routing_history={app_routing_history}
+                                platform_config={filterPlatformsForClients(platform_config)}
+                                setTogglePlatformType={setTogglePlatformType}
+                                current_language={current_language}
+                            />
                         </React.Fragment>
                     )}
                     <MenuLinks />

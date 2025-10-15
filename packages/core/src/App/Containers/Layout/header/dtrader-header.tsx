@@ -124,6 +124,10 @@ const DTraderHeader = observer(() => {
                                 <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                     <Icon icon='IcTelegram' width={20} height={20} />
                                 </a>
+                                {/* Instagram not in icon set; fallback to stock/facebook style if available */}
+                                <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                    <Icon icon='IcStockFacebook' width={20} height={20} />
+                                </a>
                             </div>
                         </React.Fragment>
                     )}

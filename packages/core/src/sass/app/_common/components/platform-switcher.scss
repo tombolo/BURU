@@ -1,12 +1,12 @@
 .platform-switcher {
     display: inline-flex;
     align-items: center;
-    padding: 0.8rem 1.2rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.6rem 0.9rem;
+    transition: all 0.3s ease;
     cursor: pointer;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+    background: #1d4ed8; // blue-700
     background-size: 200% 200%;
-    border-radius: 16px;
+    border-radius: 14px;
     box-shadow: 
         0 8px 32px rgba(15, 23, 42, 0.4),
         0 4px 16px rgba(30, 41, 59, 0.3),
@@ -42,15 +42,14 @@
     }
 
     &:not(&--is-mobile):hover {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 25%, #475569 50%, #334155 75%, #1e293b 100%);
+        background: #1e40af; // slightly darker on hover
         background-size: 200% 200%;
         box-shadow: 
             0 12px 48px rgba(15, 23, 42, 0.6),
             0 8px 24px rgba(30, 41, 59, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.15);
         border-color: rgba(59, 130, 246, 0.3);
-        transform: translateY(-3px) scale(1.02);
-        animation: gradientShift 3s ease-in-out infinite;
+        transform: translateY(-2px);
     }
 
     & svg:first-child,
@@ -62,19 +61,14 @@
         margin: 0 0 0 0.5rem;
     }
     &__label {
-        margin-left: 0.8rem;
-        font-size: 0.95rem;
+        margin-left: 0.6rem;
+        font-size: 0.9rem;
         font-weight: 700;
         letter-spacing: 1px;
         text-transform: uppercase;
-        color: #f1f5f9;
-        background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+        color: #eaf2ff;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         white-space: nowrap;
-        text-shadow: 0 1px 2px rgba(15, 23, 42, 0.5);
     }
     &__arrow {
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);

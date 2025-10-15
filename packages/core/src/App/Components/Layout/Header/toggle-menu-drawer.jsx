@@ -372,6 +372,9 @@ const ToggleMenuDrawer = observer(({ platform_config }) => {
                                         <a href='https://t.me' target='_blank' rel='noopener noreferrer' aria-label='Telegram'>
                                             <Icon icon='IcTelegram' width={20} height={20} />
                                         </a>
+                                        <a href='https://instagram.com' target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
+                                            <Icon icon='IcStockFacebook' width={20} height={20} />
+                                        </a>
                                     </div>
                                 </MobileDrawer.SubHeader>
                             )}

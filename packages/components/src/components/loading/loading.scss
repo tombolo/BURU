@@ -18,6 +18,31 @@
     }
 }
 
+// Five-bubble bouncing loader
+.bubbles {
+    margin: auto;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+
+    &__bubble {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        display: inline-block;
+        animation: bubble-bounce 1.2s ease-in-out infinite;
+        will-change: transform;
+
+        &--1 { background-color: #3b82f6; animation-delay: 0s; }        // blue
+        &--2 { background-color: #22c55e; animation-delay: 0.1s; }      // green
+        &--3 { background-color: #f59e0b; animation-delay: 0.2s; }      // amber
+        &--4 { background-color: #ef4444; animation-delay: 0.3s; }      // red
+        &--5 { background-color: #a855f7; animation-delay: 0.4s; }      // purple
+    }
+}
+
 @keyframes sk-stretchdelay {
     0%,
     40%,
@@ -56,6 +81,9 @@
         &--rect {
             background-color: var(--brand-secondary);
         }
+    }
+    &__bubbles {
+        margin: 5rem auto;
     }
 }
 

@@ -23,12 +23,15 @@ const Loading = ({ className, id, is_fullscreen = true, is_slow_loading, status,
                 className
             )}
         >
-            <div id={id} className={classNames('initial-loader__barspinner', 'barspinner', theme_class)}>
-                {Array.from(new Array(5)).map((x, inx) => (
+            <div id={id} className={classNames('initial-loader__bubbles', 'bubbles', theme_class)}>
+                {Array.from(new Array(5)).map((_, inx) => (
                     <div
                         key={inx}
-                        className={`initial-loader__barspinner--rect barspinner__rect barspinner__rect--${inx + 1
-                            } rect${inx + 1}`}
+                        className={classNames(
+                            'bubbles__bubble',
+                            `bubbles__bubble--${inx + 1}`
+                        )}
+                        aria-hidden='true'
                     />
                 ))}
             </div>

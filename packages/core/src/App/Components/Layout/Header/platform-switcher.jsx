@@ -64,10 +64,12 @@ const PlatformSwitcher = ({
             >
                 {(() => {
                     const platform_info = getPlatformInformation(app_routing_history);
+                    // When on Deriv Bot, encourage switching by showing 'DERIV TRADER'.
+                    // Otherwise, suggest 'DERIV BOT'. For non-custom icons, keep original header/name.
                     const label_text = shouldUseCustomIcon(platform_info.icon)
                         ? platform_info.icon === 'IcRebrandingDerivBot'
-                            ? 'DERIV BOT'
-                            : 'D TRADER'
+                            ? 'DERIV TRADER'
+                            : 'DERIV BOT'
                         : platform_info.header || platform_info.name || 'Platform';
                     return (
                         <>

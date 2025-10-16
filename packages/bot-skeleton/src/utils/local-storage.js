@@ -8,6 +8,9 @@ import Derivminer from './bots/$hmspeedbot$.xml';
 import Derivflipper from './bots/Mrdukeov2bot.xml';
 import Printer from './bots/BRAMSPEEDBOT.xml';
 import Under8 from './bots/DoubleOverWithanalysis.xml';
+import Dodo from './bots/Aiunder8-7-6-5recoveryunder3-4-5adjustable.xml';
+import Pepe from './bots/PROFITGAINERXVTscunentrypointbeforrun.xml';
+import Kuku from './bots/PROFITGAINERXVT.xml';
 
 // Ensure Blockly is available globally
 const getBlockly = () => {
@@ -58,6 +61,27 @@ const STATIC_BOTS = {
         id: 'under8',
         name: 'STATES Digit Switcher V2',
         xml: Under8,
+        timestamp: Date.now(),
+        save_type: save_types.LOCAL,
+    },
+    dodo: {
+        id: 'dodo',
+        name: 'Aiunder8-7-6-5recoveryunder3-4-5adjustable',
+        xml: Dodo,
+        timestamp: Date.now(),
+        save_type: save_types.LOCAL,
+    },
+    pepe: {
+        id: 'pepe',
+        name: 'PROFIT GAINER XVT',
+        xml: Pepe,
+        timestamp: Date.now(),
+        save_type: save_types.LOCAL,
+    },
+    kuku: {
+        id: 'kuku',
+        name: 'PROFIT GAINER XVT',
+        xml: Kuku,
         timestamp: Date.now(),
         save_type: save_types.LOCAL,
     },

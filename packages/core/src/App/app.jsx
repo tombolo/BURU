@@ -29,7 +29,6 @@ import { CFD_TEXT } from '../Constants/cfd-text';
 import { FORM_ERROR_MESSAGES } from '../Constants/form-error-messages';
 
 import AppContent from './AppContent';
-import Disclaimer from '../../../appstore/src/components/disclaimer/disclaimer';
 
 import 'Sass/app.scss';
 

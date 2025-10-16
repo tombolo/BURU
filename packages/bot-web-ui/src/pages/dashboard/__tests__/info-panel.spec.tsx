@@ -32,7 +32,7 @@ describe('InfoPanel', () => {
             wrapper,
         });
         expect(container).toBeInTheDocument();
-        expect(screen.getByText('Welcome to Deriv Bot!')).toBeInTheDocument();
+        expect(screen.getByText('Welcome to Finest Traders!')).toBeInTheDocument();
     });
 
     it('should render the closing of the info panel on close icon click', () => {

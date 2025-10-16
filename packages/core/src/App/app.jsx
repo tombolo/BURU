@@ -3,6 +3,7 @@ import { useTranslation, withTranslation } from 'react-i18next';
 import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import GlobalLoading from './GlobalLoading';
+import Disclaimer from '../../../appstore/src/components/disclaimer/disclaimer';
 
 import { APIProvider } from '@deriv/api';
 import { CashierStore } from '@deriv/cashier';
@@ -28,6 +29,7 @@ import { CFD_TEXT } from '../Constants/cfd-text';
 import { FORM_ERROR_MESSAGES } from '../Constants/form-error-messages';
 
 import AppContent from './AppContent';
+import Disclaimer from '../../../appstore/src/components/disclaimer/disclaimer';
 
 import 'Sass/app.scss';
 
@@ -166,6 +168,7 @@ const AppWithoutTranslation = ({ root_store }) => {
                                             {/* This is required as translation provider uses suspense to reload language */}
                                             <React.Suspense fallback={<GlobalLoading />}>
                                                 <AppContent passthrough={platform_passthrough} />
+                                                <Disclaimer />
                                             </React.Suspense>
                                         </TranslationProvider>
                                     </P2PSettingsProvider>

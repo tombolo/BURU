@@ -1,0 +1,196 @@
+@use 'components/shared/styles/mixins' as *;
+
+.free-bots-page {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-width: none;
+    margin: 0;
+    padding: 1.6rem 1.6rem 2.4rem;
+    color: var(--text-prominent);
+    background: var(--general-main-2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    @include tablet-or-desktop-screen {
+        padding: 2rem 2.4rem 3rem;
+    }
+
+    @include desktop-screen {
+        padding: 2.4rem 3.2rem 3.6rem;
+    }
+}
+
+.free-bots__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    width: 100%;
+
+    @include tablet-or-desktop-screen {
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        gap: 1.5rem;
+    }
+
+    @include desktop-screen {
+        grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+        gap: 1.75rem;
+    }
+}
+
+.free-bots__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    padding: 1.35rem 1.35rem 1.25rem;
+    text-align: left;
+    border-radius: 1.2rem;
+    color: var(--text-prominent);
+    background: var(--general-main-1);
+    border: 1px solid var(--general-section-1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+    @include desktop-screen {
+        padding: 1.5rem 1.5rem 1.35rem;
+    }
+
+    &:hover {
+        border-color: var(--general-hover);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    }
+}
+
+.free-bots__card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.free-bots__card-name {
+    margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
+    font-size: var(--text-size-xxs);
+    font-weight: var(--text-weight-bold);
+    line-height: var(--text-lh-s);
+    color: var(--text-prominent);
+
+    @include desktop-screen {
+        font-size: var(--text-size-xs);
+    }
+}
+
+.free-bots__card-folder {
+    flex: 0 0 auto;
+    font-size: var(--text-size-xxxxs);
+    font-weight: var(--text-weight-bold);
+    color: var(--text-general);
+    white-space: nowrap;
+}
+
+.free-bots__card-desc {
+    margin: 0 0 0.65rem;
+    font-size: var(--text-size-xxs);
+    line-height: var(--text-lh-m);
+    color: var(--text-general);
+
+    @include desktop-screen {
+        font-size: var(--text-size-xs);
+    }
+}
+
+.free-bots__card-meta {
+    margin: 0 0 1.15rem;
+    font-size: var(--text-size-xxxxs);
+    line-height: var(--text-lh-m);
+    color: var(--text-less-prominent);
+}
+
+.free-bots__card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    margin-top: auto;
+    padding-top: 0.25rem;
+}
+
+.free-bots__social {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+}
+
+.free-bots__avatars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.free-bots__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--general-main-1);
+    background: var(--general-section-1);
+    margin-inline-start: -0.55rem;
+
+    &:first-child {
+        margin-inline-start: 0;
+    }
+
+    @include desktop-screen {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-inline-start: -0.6rem;
+    }
+}
+
+.free-bots__using {
+    font-size: var(--text-size-xxxxs);
+    font-weight: var(--text-weight-bold);
+    color: var(--text-general);
+    white-space: nowrap;
+
+    @include desktop-screen {
+        font-size: var(--text-size-xxxs);
+    }
+}
+
+.free-bots__load-btn {
+    flex-shrink: 0;
+    margin-inline-start: auto;
+    padding: 0.55rem 1.15rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: var(--text-size-xxxxs);
+    font-weight: var(--text-weight-bold);
+    line-height: var(--text-lh-xs);
+    color: var(--general-main-1);
+    background: var(--button-primary-default);
+    cursor: pointer;
+    transition: background 0.15s ease;
+
+    @include desktop-screen {
+        padding: 0.65rem 1.35rem;
+        font-size: var(--text-size-xxxs);
+    }
+
+    &:hover {
+        background: var(--button-primary-hover);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--button-primary-default);
+        outline-offset: 2px;
+    }
+}

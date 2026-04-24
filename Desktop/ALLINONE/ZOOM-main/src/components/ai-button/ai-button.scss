@@ -1,0 +1,163 @@
+/* AI Button — draggable with heartbeat and bounce animation */
+
+.ai-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99;
+    width: 5.5rem;
+    height: 5.5rem;
+    padding: 0;
+    border: 3px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 45%, #5b21b6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: grab;
+    user-select: none;
+    box-shadow:
+        0 0 0 0 rgba(124, 58, 237, 0.7),
+        0 8px 16px rgba(124, 58, 237, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px) saturate(180%);
+    transition:
+        box-shadow 0.3s ease,
+        filter 0.3s ease,
+        border-color 0.3s ease;
+
+    &:hover {
+        filter: brightness(1.1);
+        border-color: rgba(139, 92, 246, 0.6);
+        box-shadow:
+            0 0 0 0 rgba(124, 58, 237, 0.7),
+            0 12px 24px rgba(124, 58, 237, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+}
+
+.ai-button__icon {
+    font-size: 1.8rem;
+    line-height: 1;
+    animation: ai-button-heartbeat 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite,
+               ai-button-bounce 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    will-change: transform;
+}
+
+.ai-button__text {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: ai-button-pulse 1.3s ease-in-out infinite;
+    will-change: opacity, filter;
+}
+
+@keyframes ai-button-heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(0.95);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.98);
+    }
+
+    90% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes ai-button-bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes ai-button-pulse {
+    0%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 4px rgba(124, 58, 237, 0.6));
+    }
+
+    50% {
+        opacity: 0.8;
+        filter: drop-shadow(0 0 8px rgba(124, 58, 237, 0.9));
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-button {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 5rem;
+        height: 5rem;
+
+        &__text {
+            font-size: 0.75rem;
+        }
+
+        &__icon {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .ai-button {
+        bottom: calc(4rem + 40px);
+        right: 1rem;
+        width: 5rem;
+        height: 5rem;
+
+        &__text {
+            font-size: 0.72rem;
+        }
+
+        &__icon {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-button {
+        bottom: calc(4rem + 40px);
+        right: 0.75rem;
+        width: 4.5rem;
+        height: 4.5rem;
+
+        &__text {
+            font-size: 0.68rem;
+        }
+
+        &__icon {
+            font-size: 1.2rem;
+        }
+    }
+}
